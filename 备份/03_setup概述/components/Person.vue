@@ -11,7 +11,7 @@
 <script lang = "ts">
     export default {
       name: 'Person',
-      setup() {
+      setup(props, ctx) {
         //setup函数中的this是undefined，vue3中已经弱化this了
           //数据，原来是写在data中，此时的name、age、tel不是响应式的
           let name = '张三';
@@ -27,7 +27,6 @@
           function showTel() {
             alert(tel)
           }
-          //返回数据和方法
           return {
               name,
               age,
@@ -35,8 +34,7 @@
               changeAge,
               showTel
           }
-          //setup的返回值也可以是一个渲染函数
-          // return () => 'hahahaha'
+ 
       }
     }
 </script>
